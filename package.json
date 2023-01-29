@@ -1,0 +1,17 @@
+{
+  "name": "serebii-sv-raid-scraper",
+  "version": "1.0.0",
+  "description": "Scrapes Pokemon Raid Boss Data from serebii.net",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.mjs",
+    "test:jest": "cross-env node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test": "node --test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^21.1.0"
+  }
+}
