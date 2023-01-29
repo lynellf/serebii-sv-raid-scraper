@@ -1,6 +1,13 @@
 # serebii-sv-raid-scraper
  Scrapes Pokemon Raid Boss Data from serebii.net
 
+ ## Getting Started
+
+```
+npm install
+npm start
+```
+
 ## Output
 Generates a file, `results.json` within the project directory containing:
 
