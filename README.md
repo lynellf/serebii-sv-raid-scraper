@@ -31,11 +31,6 @@ The raid boss list page contains a list of pokemon and various metadata, but we 
 - Name
 - Moves
 
-### Problem
-The data is listed as one giant table, and every row contains details for various pokemon.
-
-**Question:  If all raid bosses exist in a single table with no way to differentiate them, how do we know which pokemon is which?**
-
 Each row in the table corresponds to a set of data:
 
 |Index| Content|
@@ -51,22 +46,3 @@ Each row in the table corresponds to a set of data:
 |8|Item Drops|
 |9|New Row of Pokemon Images|
 |10|New Row of Pokemon Names|
-
-**Question: How do we parse pokemon names?**
-Pokemon names are located at index 2. Each cell contains pokemon names contained within a link tag.
-
-**Question: How do we parse move data?**
-Move data is located at index 7. Each cell contans moves separated by a line break. Each move is contained within a link tag.
-
-#### Assumptions:
-- The number of cells within each row determines how many pokemon are in that row.
-- The first row is the title and can be ignored
-- A *row* of pokemon data has a length/size of 8 items of data
-- We can gather the rows we need mathematically
-	- Add 8 to the initial row index until reaching the end
-- Pokemon with the same name will need to have an index appended to it. I.E.. Tauros
-- We can parse pokemon names and moves by performing a query on the cell for link tags and extracting its text
-- ~~We can iterate through each *Row* of pokemon by obtaining the table body's child node list minus the header, divided by 8 ~~
-	- ~~Round up to be safe we don't exclude any pokemon data~~
-- We can chunk the table rows and iterate through the chunks
-	- After removing the first row (it's always the title of the table)
